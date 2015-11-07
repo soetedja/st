@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id" data-ng-app="app" class="ng-scope">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Mongosilakan Website"/>
+        <meta name="author" content="Mongosilakan Team"/>
+        <link rel="icon" type="image/png" href="contents/favicon.ico"/>
+        <title>
+            Mongosilakan
+        </title>
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="libraries/bootstrap/css/bootstrap.min.css"/>
+        <!-- font awesome -->
+        <link rel="stylesheet" type="text/css" href="contents/fonts/font-awesome-4.3.0/css/font-awesome.css"/>
+        <!-- Ionicons 2.0.0 -->
+        <!-- <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- Admin LTE template -->
+        <link rel="stylesheet" type="text/css" href="templates/AdminLTE-2.1.1/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" type="text/css" href="templates/AdminLTE-2.1.1/css/skins/_all-skins.css"/>
+        <!-- iCheck Plugin -->
+        <link rel="stylesheet" type="text/css" href="plugins/iCheck/flat/blue.css"/>
+        <!-- Morris Chart -->
+        <link rel="stylesheet" type="text/css" href="plugins/morris/morris.css"/>
+        <!-- JVectorMap -->
+        <link rel="stylesheet" type="text/css" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
+        <!-- Datepicker -->
+        <link rel="stylesheet" type="text/css" href="plugins/datepicker/datepicker3.css"/>
+        <!-- Date range picker -->
+        <link rel="stylesheet" type="text/css" href="plugins/daterangepicker/daterangepicker-bs3.css"/>
+        <!-- Bootstrap wysihtml5 -->
+        <link rel="stylesheet" type="text/css" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
+        <link rel="stylesheet" type="text/css" href="plugins/ng-table/ng-table.css"/>
+        <link rel="stylesheet" type="text/css" href="templates/AdminLTE-2.1.1/css/custom-admin-style.css"/>
+        <link rel="stylesheet" type="text/css" href="plugins/loading-bar/loading-bar.min.css"/>
+        <link rel="stylesheet" type="text/css" href="plugins/toastr/toastr.css"/>
+        <!-- iCheck -->
+        <link rel="stylesheet" type="text/css" href="plugins/iCheck/minimal/blue.css"/>
+    </head>
+    <body class="skin-blue sidebar-mini fixed" cz-shortcut-listen="true">
+        <div class="wrapper">
+            <!-- Header -->
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini">
+                        <b>
+                            ST
+                        </b>
+                    </span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg">
+                        <b>
+                            Sale
+                        </b>
+                        Stock
+                    </span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button -->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">
+                            Toggle navigation
+                        </span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" /> -->
+                                    <span class="hidden-xs">
+                                        Sale Stock
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" /> -->
+                                        <p>
+                                            Online Shoping
+                                            <small>
+                                                Member since Nov. 2012
+                                            </small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">
+                                                Followers
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">
+                                                Sales
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">
+                                                Friends
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- Menu Footer -->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">
+                                                Profile
+                                            </a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="#" class="btn btn-default btn-flat">
+                                                Sign out
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Sitebar -->
+            <!-- Left side column. contains the logo and sidebar -->
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <form ng-submit="shortcut()" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" ng-model="shortcutCommand" class="form-control" placeholder="Shortcut.."/>
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                    <i class="fa fa-rocket">
+                                    </i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul id="sitebar" class="sidebar-menu">
+                        <li class="header">
+                            {{MenuResources.MainNavigation}}
+                        </li>
+                        <li ng-repeat="nav in navigation" ng-click="sitebarAction($event)" class={{nav.status}} treeview "><a href="#/{{nav.url}}">
+                            <i class="fa {{nav.icon}}"></i>
+                            <span>
+                                {{nav.label}}
+                            </span>
+                            <i ng-if="nav.hasSubs" class="fa fa-angle-left pull-right">
+                            </i>
+                        </a>
+                        <ul ng-if="nav.hasSubs " class="treeview-menu">
+                            <li ng-click="sitebarAction($event, true)" ng-repeat="subnav in nav.subs" class="{{subnav.status}}">
+                                <a href="#/{{subnav.url}}">
+                                    <i class="fa {{subnav.icon}}">
+                                    </i>
+                                    <span >
+                                        {{subnav.label}}
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content -->
+        <!--
+        -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- ngView: -->
+            <div ng-view></div>
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Control sitebar -->
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+            </div>
+            <strong>
+                Copyright © 2014-2015
+            </strong>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+    <script type="text/javascript" src="plugins/jQuery/jQuery-2.1.4.min.js">
+    </script>
+    <!-- iCheck -->
+    <script type="text/javascript" src="plugins/iCheck/icheck.min.js">
+    </script>
+    <!-- jQuery UI 1.11.2 -->
+    <script type="text/javascript" src="plugins/jQueryUI/jquery-ui.min.js">
+    </script>
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js">
+    </script>
+    <!-- AngularJS -->
+    <script type="text/javascript" src="libraries/angular/angular.min.js">
+    </script>
+    <script type="text/javascript" src="libraries/angular/angular-route.min.js">
+    </script>
+    <script type="text/javascript" src="libraries/angular/ui-bootstrap.js">
+    </script>
+    <script type="text/javascript" src="libraries/angular/angular-animate.js">
+    </script>
+    <script type="text/javascript" src="plugins/ng-table/ng-table.js">
+    </script>
+    <script type="text/javascript" src="app/backend/app.js">
+    </script>
+    <script type="text/javascript" src="app/backend/base-scripts/constants.js">
+    </script>
+    <script type="text/javascript" src="app/backend/directives/commonDirectives.js">
+    </script>
+    <script type="text/javascript" src="app/backend/base-scripts/base-common.js">
+    </script>
+    <script type="text/javascript" src="app/backend/services/baseService.js">
+    </script>
+    <script type="text/javascript" src="app/backend/services/resources/resourceService.js">
+    </script>
+    <!-- Sale Stock Module -->
+    <script type="text/javascript" src="app/backend/modules/saleStockModule.js">
+    </script>
+    <script type="text/javascript" src="app/backend/services/saleStock/productService.js">
+    </script>
+    <script type="text/javascript" src="app/backend/controllers/saleStock/productManageController.js">
+    </script>
+    <script type="text/javascript" src="app/backend/controllers/saleStock/productCreateController.js">
+    </script>
+    <script type="text/javascript" src="app/backend/controllers/saleStock/productEditController.js">
+    </script>
+    <!-- daterangepicker -->
+    <script type="text/javascript" src="plugins/moment/moment+locales.js">
+    </script>
+    <script type="text/javascript" src="plugins/daterangepicker/daterangepicker.js">
+    </script>
+    <!-- datepicker -->
+    <script type="text/javascript" src="plugins/datepicker/bootstrap-datepicker.js">
+    </script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script type="text/javascript" src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js">
+    </script>
+    <!-- Slimscroll -->
+    <script type="text/javascript" src="plugins/slimScroll/jquery.slimscroll.min.js">
+    </script>
+    <!-- FastClick -->
+    <script type="text/javascript" src="plugins/fastclick/fastclick.min.js">
+    </script>
+    <!-- AdminLTE App -->
+    <script type="text/javascript" src="templates/AdminLTE-2.1.1/js/app.js">
+    </script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script type="text/javascript" src="templates/AdminLTE-2.1.1/js/pages/dashboard.js">
+    </script>
+    <!-- AdminLTE for demo purposes -->
+    <script type="text/javascript" src="templates/AdminLTE-2.1.1/js/demo.js">
+    </script>
+    <script type="text/javascript" src="plugins/loading-bar/loading-bar.min.js">
+    </script>
+    <script type="text/javascript" src="plugins/toastr/toastr.min.js">
+    </script>
+    <!-- Morris.js charts -->
+    <!-- jQuery 2.1.4 -->
+    <!--
+        //
+        <script src="plugins/jQuery/jQuery-2.1.4.min.js">
+        </script>
+    -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+</body>
+</html>

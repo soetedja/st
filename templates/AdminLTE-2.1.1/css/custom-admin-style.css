@@ -1,0 +1,51 @@
+table .text-center {
+    text-align: center;
+}
+
+.box-body>.table {
+    margin-bottom: 20px;
+}
+
+.messages {
+    padding: 5px 25px 0 25px;
+}
+
+.messages .alert {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+ 
+.box-tools .input-sm {
+    height: 29.5px;
+}
+
+.messages-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.right-margin-buffer {
+	margin-right: 5px;
+}
+
+.skin-blue .sidebar-menu > li:hover > a{
+  color: #ffffff;
+  background: #1e282c;
+  border-left-color: #ECF0F5;
+}
+
+.skin-blue .sidebar-menu > li.active:hover > a {
+  color: #ffffff;
+  background: #1e282c;
+  border-left-color: #3c8dbc;
+}
+
+.xdebug-error, .xe-fatal-error{
+  color:black;
+}
+
+.content-header>.breadcrumb>li+li:before {
+    content: "/\00a0";
+}

@@ -1,0 +1,64 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+    {{CommonResources.Products}}
+    <!-- <small>List of product</small> -->
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>{{MenuResources.SaleStock}}</a></li>
+        <li class="active">{{CommonResources.Products}}</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col col-xs-12">
+            <div class="box box box-primary">
+                <div messages-container></div>
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                    <div class="box-tools">
+                        <div class="input-group" style="width: 450px;">
+                            <div class="input-group-btn">
+                                <a href="#/saleStock/product/create" class="btn btn-sm btn-primary pull-right"><i class="fa fa-plus right-margin-buffer"></i> {{CommonResources.Add}} {{CommonResources.Product}}</a>
+                                <button ng-click="tableParams.reload()" class="btn btn-sm btn-default pull-right"><i class="fa fa-refresh right-margin-buffer"></i> {{CommonResources.Reload}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div loading-container="tableParams.settings().$loading" class="box-body table-responsive">
+                    <table ng-table="tableParams" show-filter="true" class="table table-hover" > 
+                        <tr ng-repeat="item in $data">
+                            <td data-title="CommonResources.Action" class="text-center" style="width:120px">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-flat" data-toggle="dropdown">{{CommonResources.Action}}</button>
+                                    <button type="button" class="btn btn-primary btn-flat dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#/saleStock/product/{{item.id}}">{{CommonResources.Edit}}</a></li>
+                                        <li><a href="" ng-click="delete(item.id, item.name)">{{CommonResources.Delete}}</a></li>
+                                        <!-- <li class="divider"></li> -->
+                                    </ul>
+                                </div>
+                            </td>
+                            <td data-title="CommonResources.Name" filter="{ 'name': 'text' }" sortable="'name'">
+                                {{item.name}}
+                            </td>
+                            <td data-title="CommonResources.Description" filter="{ 'name': 'text' }" sortable="'description'">
+                                {{item.description}}
+                            </td>
+                            <td class="col-md-1 text-center" data-title="'Is Ready'" filter="{ 'isReady': 'select' }" filter-data="getBooleanFilterOptions()" sortable="'isReady'">
+                                <span boolean-label value="item.isReady"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row (main row) -->
+</section>
+<!-- /.content -->

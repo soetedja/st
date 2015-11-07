@@ -1,0 +1,63 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+    {{ConfigurationResources.Statuses}}
+    <!--<small>List of entity</small>-->
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{MenuResources.Configurations}}</a></li>
+        <li class="active">{{ConfigurationResources.Statuses}}</li>
+        <li class="active">{{CommonResources.Create}} {{ConfigurationResources.Status}}</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div messages-container></div>
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{CommonResources.Create}} {{ConfigurationResources.Status}}</h3>
+                </div>
+                <form name="entityForm" ng-submit="submitForm(entityForm.$valid)" novalidate>
+                    <div class="box-body">
+                        <!-- name -->
+                        <div class="form-group" ng-class="{ 'has-error' : entityForm.name.$invalid && entityForm.name.$touched }">
+                            <label>{{CommonResources.Name}}</label>
+                            <input type="text" name="name" class="form-control" ng-model="entity.name" required>
+                            <p ng-show="entityForm.name.$invalid && entityForm.name.$touched" class="help-block">{{CommonResources.Msg_Required.format(CommonResources.Name)}}</p>
+                        </div>
+                        <!-- Description -->
+                        <div class="form-group" ng-class="{ 'has-error' : form.description.$invalid && form.description.$touched }">
+                            <label>{{CommonResources.Description}}</label>
+                            <textarea ng-model="entity.description"class="form-control" rows="3" placeholder=""></textarea>
+                        </div>
+                        <!-- Is Ready -->
+                        <div class="form-group" ng-class="{ 'has-error' : entityForm.isReady.$invalid && entityForm.isReady.$touched }">
+                            <label for="isReady">Is Ready</label> <br/>
+                            <select ng-init="entity.isReady = entity.isReady" name="isReady" id="isReady" class="form-control"
+                                ng-options="option.id as option.title for option in booleanDropdownOptions"
+                                ng-model="entity.isReady">
+                                <option></option>
+                            </select>
+                            <p ng-show="entityForm.isReady.$invalid && entityForm.isReady.$touched" class="help-block">{{CommonResources.Msg_Required.format('Is Ready')}}</p>
+                        </div>
+                        <!-- button -->
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary margin-right-buffer" ng-disabled="entityForm.$invalid">{{CommonResources.Submit}}</button>
+                            <a href="#/configurations/statuses" class="btn btn-default">{{CommonResources.Cancel}}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+    </div>
+</section>
+<!-- right col -->
+</div>
+<!-- /.row (main row) -->
+</section>
+<!-- /.content -->
