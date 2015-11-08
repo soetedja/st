@@ -19,7 +19,7 @@ app.directive("loadMore", function($timeout, $rootScope, $compile, starWarsServi
             loadMore();
         }
         $(window).scroll(function() {
-            if (($(window).scrollTop() + $(window).height() > $(document).height() - 100) && scope.url != null) {
+            if (($(window).scrollTop() + $(window).height() > $(document).height() - 500) && scope.url != null) {
                 loadMore();
             }
         });
