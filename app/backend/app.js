@@ -1,11 +1,8 @@
-var app = angular.module("app", ["angular-loading-bar", "ngRoute", "ui.bootstrap", "ngAnimate", "ngTable", "saleStockModule"]);
+var app = angular.module("app", ["angular-loading-bar", "ngRoute", "ui.bootstrap", "ngAnimate", "ngTable", "saleStockModule", "starWarsModule"]);
 app.config(['$routeProvider', '$modalProvider', 'cfpLoadingBarProvider',
     function($routeProvider, $modalProvider, cfpLoadingBarProvider) {
-        $routeProvider.when("/login", {
-            templateUrl: "app/backend/views/configurations/login.html",
-            controller: "loginController"
-        }).otherwise({
-            redirectTo: "/saleStock/products"
+        $routeProvider.otherwise({
+            redirectTo: "/notFound"
         });
         $modalProvider.options.animation = false;
         cfpLoadingBarProvider.latencyThreshold = 0;

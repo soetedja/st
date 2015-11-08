@@ -181,9 +181,15 @@ function baseCommon($q, $rootScope, $document, $window, $timeout, constants, res
             },
             starWars: {
                 label: "StarWars",
-                url: "saleStock/starWars",
-                hasSubs: false,
+                hasSubs: true,
                 icon: "fa-flag",
+                subs: {
+                    people: {
+                        label: "People",
+                        url: "starWars/people",
+                        icon: "fa-user",
+                    }
+                }
             }
         };
         return navigation;

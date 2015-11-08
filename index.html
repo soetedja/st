@@ -145,7 +145,7 @@
                         <li class="header">
                             {{MenuResources.MainNavigation}}
                         </li>
-                        <li ng-repeat="nav in navigation" ng-click="sitebarAction($event)" class={{nav.status}} treeview "><a href="#/{{nav.url}}">
+                        <li ng-repeat="nav in navigation" ng-click="sitebarAction($event)" class="{{nav.status}} treeview"><a href="#/{{nav.url}}">
                             <i class="fa {{nav.icon}}"></i>
                             <span>
                                 {{nav.label}}
@@ -153,7 +153,7 @@
                             <i ng-if="nav.hasSubs" class="fa fa-angle-left pull-right">
                             </i>
                         </a>
-                        <ul ng-if="nav.hasSubs " class="treeview-menu">
+                        <ul ng-if="nav.hasSubs" class="treeview-menu">
                             <li ng-click="sitebarAction($event, true)" ng-repeat="subnav in nav.subs" class="{{subnav.status}}">
                                 <a href="#/{{subnav.url}}">
                                     <i class="fa {{subnav.icon}}">
@@ -211,6 +211,8 @@
     </script>
     <script type="text/javascript" src="plugins/ng-table/ng-table.js">
     </script>
+    <!--<script type="text/javascript" src="plugins/ng-infinite-scroll/ng-infinite-scroll.js">
+    </script>-->
     <script type="text/javascript" src="app/backend/app.js">
     </script>
     <script type="text/javascript" src="app/backend/base-scripts/constants.js">
@@ -233,6 +235,15 @@
     <script type="text/javascript" src="app/backend/controllers/saleStock/productCreateController.js">
     </script>
     <script type="text/javascript" src="app/backend/controllers/saleStock/productEditController.js">
+    </script>
+    <!-- Star Wars Module -->
+    <script type="text/javascript" src="app/backend/modules/starWarsModule.js">
+    </script>
+    <script type="text/javascript" src="app/backend/services/starWars/starWarsService.js">
+    </script>
+    <script type="text/javascript" src="app/backend/controllers/starWars/peopleListController.js">
+    </script>
+    <script type="text/javascript" src="app/backend/controllers/starWars/peopleDetailController.js">
     </script>
     <!-- daterangepicker -->
     <script type="text/javascript" src="plugins/moment/moment+locales.js">

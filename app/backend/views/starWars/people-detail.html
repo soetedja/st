@@ -1,0 +1,185 @@
+<!--
+    Content Header (Page header)
+-->
+<section class="content-header">
+    <h1>
+        Person Detail
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard">
+                </i>
+                Star Wars
+            </a>
+        </li>
+        <li class="active">
+            People
+        </li>
+    </ol>
+</section>
+<!--
+    Main content
+-->
+<section class="content" get-detail url="http://swapi.co/api/people/{{id}}" ng-model="entity">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div messages-container>
+                </div>
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        {{entity.name}}
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-6">
+                        <strong>
+                            <i class="fa fa-long-arrow-up margin-r-5">
+                            </i>
+                            Height
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.height}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-user-secret margin-r-5">
+                            </i>
+                            Hair Color
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.hair_color}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-eye margin-r-5">
+                            </i>
+                            Eye Color
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.eye_color}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-genderless margin-r-5">
+                            </i>
+                            Gender
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.gender}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-film margin-r-5">
+                            </i>
+                            Film
+                        </strong>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="item in entity.films" >
+                                <a ng-if="item != null" href="#/starWars/film/{{filmdetail.id}}" get-detail url="{{item}}" ng-model="filmdetail" >
+                                {{filmdetail.title}}
+                            </a>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-car margin-r-5">
+                            </i>
+                            Vehicles
+                        </strong>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="item in entity.vehicles" >
+                                <a ng-if="item != null" href="#/starWars/vehicle/{{detail.id}}" get-detail url="{{item}}" ng-model="detail" >
+                                {{detail.name}}
+                            </a>
+                            </li>
+                        </ul>
+                        <hr/>
+                    </div>
+                    <!-- RIGHT COLUMN -->
+                    <div class="col-md-6">
+                        <strong>
+                            <i class="fa fa-unsorted margin-r-5">
+                            </i>
+                            Mass
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.mass}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-square margin-r-5">
+                            </i>
+                            Skin Color
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.skin_color}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-calendar margin-r-5">
+                            </i>
+                            Birth Year
+                        </strong>
+                        <p class="text-muted">
+                            {{entity.birth_year}}
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-home margin-r-5">
+                            </i>
+                            Home World
+                        </strong>
+                        <p class="text-muted">
+                            <a ng-if="entity != null" href="{{entity.homeworlddetail.url}}" get-detail url="{{entity.homeworld}}" ng-model="entity.homeworlddetail" >
+                                {{entity.homeworlddetail.name}}
+                            </a>
+                        </p>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-paw margin-r-5">
+                            </i>
+                            Species
+                        </strong>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="item in entity.species" >
+                                <a ng-if="item != null" href="#/starWars/species/{{detail.id}}" get-detail url="{{item}}" ng-model="detail" >
+                                {{detail.name}}
+                            </a>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <strong>
+                            <i class="fa fa-rocket margin-r-5">
+                            </i>
+                            Starship
+                        </strong>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="item in entity.starships" >
+                                <a ng-if="item != null" href="#/starWars/starship/{{detail.id}}" get-detail url="{{item}}" ng-model="detail" >
+                                {{detail.name}}
+                            </a>
+                            </li>
+                        </ul>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col (left) -->
+    </div>
+</section>
+<!--
+    right col
+-->
+</div>
+<!--
+/.row (main row)
+-->
+</section>
+<!--
+/.content
+-->
