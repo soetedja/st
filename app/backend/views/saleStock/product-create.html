@@ -1,13 +1,13 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-    {{ConfigurationResources.Statuses}}
+    {{CommonResources.Products}}
     <!--<small>List of entity</small>-->
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> {{MenuResources.Configurations}}</a></li>
-        <li class="active">{{ConfigurationResources.Statuses}}</li>
-        <li class="active">{{CommonResources.Create}} {{ConfigurationResources.Status}}</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> {{MenuResources.SaleStock}}</a></li>
+        <li class="">{{CommonResources.Products}}</li>
+        <li class="active">{{CommonResources.Create}} {{CommonResources.Product}}</li>
     </ol>
 </section>
 <!-- Main content -->
@@ -18,7 +18,7 @@
             <div class="box box-primary">
                 <div messages-container></div>
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{CommonResources.Create}} {{ConfigurationResources.Status}}</h3>
+                    <h3 class="box-title">{{CommonResources.Create}} {{CommonResources.Product}}</h3>
                 </div>
                 <form name="entityForm" ng-submit="submitForm(entityForm.$valid)" novalidate>
                     <div class="box-body">
