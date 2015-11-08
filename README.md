@@ -17,4 +17,4 @@ $ git clone https://github.com/soetedja/st.git
 ## RestAPI url
 Module :
  - SaleStock : http://mongosilakan.net/Base.RestAPI/api/product/
- - StarSars : http://swapi.co/api/
+ - StarWars : http://swapi.co/api/
