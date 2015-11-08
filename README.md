@@ -1,5 +1,8 @@
 ## SPA with Angular + Bootstrap
 
+## Demo
+http://mongosilakan.net/st/#/saleStock/products
+
 ## Installation
 ####1. Clone this project or Download that ZIP file
 
